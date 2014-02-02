@@ -1,4 +1,4 @@
-task hello {
+task assemble {
     doLast {
         println 'Hello world!'
     }
