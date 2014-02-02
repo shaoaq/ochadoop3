@@ -3,3 +3,8 @@ task assemble {
         println 'Hello world!'
     }
 }
+task check {
+    doLast {
+        println 'Hello world!'
+    }
+}
