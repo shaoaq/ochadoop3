@@ -2,5 +2,8 @@ language: java
 
 before_install:
   - git submodule update --init --recursive
+install:
+    - TERM=dumb gradle tasks
+script: 
+    - TERM=dumb gradle buildZookeeper --debug
 
-script: "gradle buildZookeeper --debug"
