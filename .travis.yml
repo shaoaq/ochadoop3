@@ -3,3 +3,4 @@ language: java
 before_install:
   - git submodule update --init --recursive
 
+script: "gradle buildZookeeper --debug"

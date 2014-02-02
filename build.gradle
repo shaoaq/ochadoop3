@@ -1,1 +1,4 @@
-apply plugin: 'java'
+task buildZookeeper(type:Exec){
+    workingDir 'zookeeper/cloudera/maven-packaging'
+    commandLine 'cmd','/c','mvn package'
+}
