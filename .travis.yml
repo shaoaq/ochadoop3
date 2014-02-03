@@ -6,8 +6,4 @@ install:
   - TERM=dumb gradle tasks
 script: 
   - TERM=dumb gradle buildZookeeper --debug
-cache:
-  directories:
-    - .autoconf
-    - $HOME/.m2
 
