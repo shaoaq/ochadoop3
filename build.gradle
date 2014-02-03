@@ -1,6 +1,11 @@
-task buildZookeeper(type:Exec){
+task zookeeper_generate_build_properties(type:Exec){
+    workingDir 'zookeeper'
+    commandLine 'mvn','-f','cloudera-pom.xml','clean','package','-DskipTests'
+}
+
+task buildZookeeper(dependsOn:zookeeper_generate_build_properties,type:Exec){
     //workingDir 'zookeeper/cloudera/maven-packaging'
     //commandLine 'mvn','package'
     workingDir 'zookeeper'
-    commandLine 'mvn','-f','cloudera-pom.xml','clean','package','-DskipTests'
+    commandLine 'ant','clean','-Dcdh.maven=true','tar'
 }
