@@ -2,7 +2,8 @@ language: java
 
 before_install:
   - git submodule update --init --recursive
-  - sudo apt-get --reinstall install -qq libcppunit
+  - sudo apt-get update >/dev/null
+  - sudo apt-get -q install cmake libcppunit-dev valgrind
 install:
   - TERM=dumb gradle tasks
 script: 
