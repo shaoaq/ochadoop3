@@ -3,7 +3,11 @@ language: java
 before_install:
   - git submodule update --init --recursive
 install:
-    - TERM=dumb gradle tasks
+  - TERM=dumb gradle tasks
 script: 
-    - TERM=dumb gradle buildZookeeper --debug
+  - TERM=dumb gradle buildZookeeper --debug
+cache:
+  directories:
+    - .autoconf
+    - $HOME/.m2
 
