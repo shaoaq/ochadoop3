@@ -1,7 +1,10 @@
-task zookeeper_generate_build_properties(type:Exec){
+task zookeeper_generate_build_properties(dependsOn:gen,type:Exec){
+    workingDir 'zookeeper'
+    commandLine 'cat','/home/travis/build/asiainfo-linkage/ochadoop/zookeeper/build.properties'
+}
+task gen(type:Exec){
     workingDir 'zookeeper'
     commandLine 'mvn','-f','cloudera-pom.xml','clean','package','-DskipTests'
-    commandLine 'cat','/home/travis/build/asiainfo-linkage/ochadoop/zookeeper/build.properties'
 }
 
 task buildZookeeper(dependsOn:zookeeper_generate_build_properties,type:Exec){
