@@ -2,5 +2,5 @@ task buildZookeeper(type:Exec){
     //workingDir 'zookeeper/cloudera/maven-packaging'
     //commandLine 'mvn','package'
     workingDir 'zookeeper'
-    commandLine 'ant','clean','-Dcdh.maven=true','tar'
+    commandLine 'mvn','-f','cloudera-pom.xml','clean','package','-DskipTests'
 }
