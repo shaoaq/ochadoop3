@@ -12,5 +12,5 @@ task buildZookeeper(dependsOn:zookeeper_generate_build_properties,type:Exec){
     //workingDir 'zookeeper/cloudera/maven-packaging'
     //commandLine 'mvn','package'
     workingDir 'zookeeper'
-    commandLine 'ant','-Dcdh.maven=true','tar'
+    commandLine 'ant','-Dcdh.maven=true','-Dversion=3.4.5-och2.0.0','tar'
 }
