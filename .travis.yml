@@ -2,6 +2,7 @@ language: java
 
 before_install:
   - git submodule update --init --recursive
+  - sudo apt-get --reinstall install -qq libcppunit
 install:
   - TERM=dumb gradle tasks
 script: 
